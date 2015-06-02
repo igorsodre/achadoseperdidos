@@ -18,12 +18,13 @@ class Objeto_Model extends Base_Model
     public function buscarObjetosRequisitados()
     {
         $id = $this->session->userdata('loginId');
-        $requisicoes = $this->em->createQueryBuilder()->select('req')->from('Entity\Requisicao','req')
+        $requisicoes = $this->em->createQueryBuilder()->select('req')->from('Entity\Requisicao', 'req')
             ->where('req.idPerfil=' . $id)->getQuery()->getResult();
-        foreach($requisicoes as $requisicao){
+        $objetos = NULL;
+        foreach ($requisicoes as $requisicao) {
             $idObjeto = $requisicao->getIdObjeto()->getId();
-            $objetos[] = $this->em->createQueryBuilder()->select('obj')->from('Entity\Obj','obj')
-                ->where('obj.id='.$idObjeto)->getQuery()->getSingleResult();
+            $objetos[] = $this->em->createQueryBuilder()->select('obj')->from('Entity\Obj', 'obj')
+                ->where('obj.id=' . $idObjeto)->getQuery()->getSingleResult();
         }
         return $objetos;
     }

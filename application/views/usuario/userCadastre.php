@@ -1,45 +1,49 @@
 <?php $this->load->view('_inc/header') ?>
-    <h1>Cadastro de Usuário</h1>
-    <div>
-        <form action="<?= base_url() . 'index.php/usuario/cadastroAction' ?>" method="post">
-            <p>
-                <label>
-                    Nome:<input type="text" name="nome" placeholder=" Insira seu nome">
-                </label>
-            </p>
 
-            <p>
-                <label>
-                    Login:<input type="text" name="login" placeholder=" Insira seu login">
-                </label>
-            </p>
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center-align">Cadastro de Usuário</h3>
+        </div>
+        <form class="col s12" action="<?= base_url() . 'index.php/usuario/cadastroAction' ?>" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input class="validade" id="cadastreNome" type="text" name="nome">
+                    <label for="cadastreNome" class="teal-text"> Nome </label>
+                </div>
+                <div class="input-field col s6">
+                    <input class="validade" id="cadastreLogin" type="text" name="login">
+                    <label for="cadastreLogin" class="teal-text"> Login </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input class="validade" id="cadastreSenha" type="password" name="senha"
+                                 >
+                    <label for="cadastreSenha" class="teal-text">Senha</label>
+                </div>
+                <div class="input-field col s6">
+                    <input class="validade" id="cadastreEmail" type="text" name="email">
+                    <label for="cadastreEmail" class="teal-text">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input class="validade" id="cadastreTelefone" type="text" name="telefone">
+                    <label for="cadastreTelefone" class="teal-text">Telefone</label>
+                </div>
 
-            <p>
-                <label>
-                    Senha:<input type="password" name="senha" placeholder="Insira sua senha">
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    Email:<input type="text" name="email" placeholder=" Insira seu Email">
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    Telefone:<input type="text" name="telefone" placeholder="Insira seu Telefone">
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    RG:<input type="text" name="rg" placeholder="Insira seu RG">
-                </label>
-            </p>
+                <div class="input-field col s6">
+                    <input class="validade" id="cadastreRg" type="text" name="rg">
+                    <label for="cadastreRg" class="teal-text">RG</label>
+                </div>
+            </div>
             <input type="hidden" name="tipo" value="1">
+
+            <div class="col s2 offset-s5">
+                <button CLASS="btn waves-effect blue darken-1" value="GO">GO</button>
+            </div>
             <label>
-                <input type="submit" value="GO">
+                <input type="submit" value="GO" style="display:none ">
             </label>
         </form>
     </div>

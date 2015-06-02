@@ -14,24 +14,30 @@ class Objeto extends Base_Controller
         $this->load->library('upload', $img_config);
         $this->upload->initialize($img_config);
     }
+
     /***************************   listagem          *****************************/
-    public function listagemObjetos(){
-    	$firstResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 0, false);
-    	$secondResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 1, false);
-    	$dados['objetos'] = array_merge($firstResult,$secondResult);
-    	$this->load->view('objeto/showObjects',$dados);
+    public function listagemObjetos()
+    {
+        $firstResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 0, false);
+        $secondResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 1, false);
+        $dados['objetos'] = array_merge($firstResult, $secondResult);
+        $this->load->view('objeto/showObjects', $dados);
     }
-    public function meusObjetos(){
-    	$id = $this->session->userdata('loginId');
-    	$dados['cadastrados'] = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(),'perfil',$id,false);
-    	$dados['requisitados'] = $this->objeto_model->buscarObjetosRequisitados();
-    	$this->load->view('objeto/userMyObjects',$dados);
+
+    public function meusObjetos()
+    {
+        $id = $this->session->userdata('loginId');
+        $dados['cadastrados'] = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'perfil', $id, false);
+        $dados['requisitados'] = $this->objeto_model->buscarObjetosRequisitados();
+        $this->load->view('objeto/userMyObjects', $dados);
     }
+
     /*********************  cadastro    ************************************/
     public function cadastro()
     {
         $this->load->view('objeto/objectCadastre');
     }
+
     public function cadastroAction()
     {
         $arr = $this->validacaoFomulario();
@@ -67,6 +73,7 @@ class Objeto extends Base_Controller
     public function processaFoto($opt)
     {
         // se opt = 1, esta cadastrando o objeto se opt = 2 esta atualizando o objeto
+        $arr = $this->input->post();
         if (isset($_FILES['foto'])) {
             $extensao = strrchr($_FILES['foto']['name'], '.');
             $_FILES['foto']['name'] = md5(microtime()) . $extensao;
@@ -95,23 +102,24 @@ class Objeto extends Base_Controller
             }
         }
     }
+
     /****************************************** requisicao  *************************/
-    public function requisitarObjeto($objetoId){
-    	$userId = $this->session->userdata('loginId');
-    	$objeto = $this->objeto_model->buscarPorId(\Entity\Obj::getCaminho(),$objetoId);
-    	$user = $this->objeto_model->buscarPorId(\Entity\Perfil::getCaminho(),$userId);
-    	$requisicao = new \Entity \ Requisicao();
-    	$objeto->setStatus(1);
-    	$requisicao->setIdObjeto($objeto);
-    	$requisicao->setIdPerfil($user);
-    	if($this->objeto_model->verificaRequisicao(\Entity\Requisicao::getCaminho(),$objetoId,$userId)){
-    		//TODO setar mensagem do flush
-    		redirect('objeto/listagemObjetos');
-    	}
-    	else{
-    		$this->objeto_model->salvar($requisicao);
-    		redirect('objeto/listagemObjetos');
-	    }
-	}
+    public function requisitarObjeto($objetoId)
+    {
+        $userId = $this->session->userdata('loginId');
+        $objeto = $this->objeto_model->buscarPorId(\Entity\Obj::getCaminho(), $objetoId);
+        $user = $this->objeto_model->buscarPorId(\Entity\Perfil::getCaminho(), $userId);
+        $requisicao = new \Entity \ Requisicao();
+        $objeto->setStatus(1);
+        $requisicao->setIdObjeto($objeto);
+        $requisicao->setIdPerfil($user);
+        if ($this->objeto_model->verificaRequisicao(\Entity\Requisicao::getCaminho(), $objetoId, $userId)) {
+            //TODO setar mensagem do flush
+            redirect('objeto/listagemObjetos');
+        } else {
+            $this->objeto_model->salvar($requisicao);
+            redirect('objeto/listagemObjetos');
+        }
+    }
 }
 
