@@ -22,7 +22,7 @@ class Requisicao extends \BaseEntity
      */
     private $reqId;
     /**
-     * @OneToOne(targetEntity="Obj")
+     * @OneToOne(targetEntity="Obj", fetch="EAGER")
      * @JoinColumn(name="objeto_idobjeto", referencedColumnName="idobjeto", nullable=false)
      */
     private $idObjeto;

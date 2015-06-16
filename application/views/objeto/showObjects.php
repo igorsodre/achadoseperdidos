@@ -19,9 +19,12 @@
                         <tr class="mypictures">
                             <td><?= $objeto->getIdentificacao() ?></td>
                             <td><?= $objeto->getDescricao() ?></td>
-                            <td><img src="<?= base_url() . $objeto->getFoto() ?>" class="responsive-img" style="height: 100px">
+                            <td><img src="<?= base_url() . $objeto->getFoto() ?>" class="responsive-img"
+                                     style="height: 100px">
                             </td>
-                            <td><a class="btn waves-effect  blue darken-1" href="<?=base_url().'index.php/objeto/requisitarObjeto/'.$objeto->getId() ?>"> Requisitar Devolucao </a></td>
+                            <td><a class="btn waves-effect  blue darken-1"
+                                   href="<?= base_url() . 'index.php/objeto/requisitarObjeto/' . $objeto->getId() ?>">
+                                    Requisitar Devolucao </a></td>
                         </tr>
 
                     <?php }

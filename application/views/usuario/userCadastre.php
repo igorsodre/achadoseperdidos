@@ -4,7 +4,7 @@
         <div class="col s12">
             <h3 class="center-align">Cadastro de Usuário</h3>
         </div>
-        <form class="col s12" action="<?= base_url() . 'index.php/usuario/cadastroAction' ?>" method="post">
+        <form name="cadastreUserForm" onsubmit="return validateFormUserCadastre()" class="col s12" action="<?= base_url() . 'index.php/usuario/cadastroAction' ?>" method="post">
             <div class="row">
                 <div class="input-field col s6">
                     <input class="validade" id="cadastreNome" type="text" name="nome">

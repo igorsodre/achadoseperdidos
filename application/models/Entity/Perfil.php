@@ -182,7 +182,6 @@ class Perfil
     {
         $this->tipo = $tipo;
     }
-
     public static function getCaminho(){
         return 'Entity\Perfil';
     }

@@ -131,7 +131,7 @@ class Usuario extends Base_Controller
 
     public function validaCadastroForm()
     {
-        $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[4]');
+        $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[3]');
         $this->form_validation->set_rules('login', 'login', 'required|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('senha', 'senha', 'required|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
@@ -212,7 +212,29 @@ class Usuario extends Base_Controller
         return NULL;
     }
     /*************************************************************/
-    public function listaUsuarios(){
-        die;
+    public function listarUsuarios(){
+        $dados['users'] = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'tipo', 1, false);
+        $dados['admins'] = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'tipo',0, false);
+        //die(var_dump($dados));
+        $this->load->view('usuario/adminShowUsers',$dados);
     }
+    public function excluirUsuario($id){
+        die(var_dump("cheguei no exluir usuario",$id));
+    }
+    public function excluirAdmin($id){
+        die(var_dump("cheguei no exluir admin",$id));
+    }
+    public function adminEditarUsuario($id){
+        die(var_dump("cheguei aqui no editar usuario",$id));
+    }
+    public function adminEditarAdmin($id){
+        die(var_dump("cheuguei aqui no editar admin",$id));
+    }
+    public function adminNovoUsuario(){
+        die(var_dump("cheguei aqui admin novo usuario"));
+    }
+    public function adminNovoAdmin(){
+        die(var_dump("cheguei aqui admin novo admin"));
+    }
+
 }

@@ -5,7 +5,8 @@
         </div>
     </div>
     <div class="row">
-        <form id="updt-obj-form" method="post" class="col s12" action="<?= base_url() . 'index.php/objeto/atualizacaoObjetoAction' ?>"
+        <form id="updt-obj-form" method="post" class="col s12"
+              action="<?= base_url() . 'index.php/objeto/adminUpdateObjectAction' ?>"
               enctype="multipart/form-data">
             <div class="input-field col s6 offset-s3">
                 <input id="objUpdteId" class="validade" type="text" name="identificacao"
@@ -20,9 +21,19 @@
                     <label for="objUpdteIdDes" class="teal-text" style="font-size: 18">Descrição</label>
                 </div>
             </div>
+            <div class="col s12 center-align">
+                <button id="myPicButon" class="btn waves-effect red darken-1" type="button">ADD New Pic</button>
+                <script>
+                    $('#myPicButon').click(function(){
+                       $('.myPicture').click();
+                    });
+                </script>
+            </div>
+            <input class="myPicture" type="file" name="foto" style="display: none">
             <input type="hidden" name="old_foto" value="<?= $objeto->getFoto() ?>">
             <input type="hidden" name="id" value="<?= $objeto->getId() ?>">
             <input type="hidden" name="status" value="<?= $objeto->getStatus() ?>">
+            <input type="hidden" name="idperfil" value="<?= $objeto->getPerfil()->getId() ?>">
 
             <div class="row"><p></p></div>
             <div class="cols 12 center-align">

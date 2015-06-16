@@ -12,6 +12,7 @@
     <!--<script src="<? /*= base_url() . "public/js/vendor/jquery-2.1.3.min.js" */ ?>"></script>-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.js"></script>
 </head>
 <body>
 <div class="container">

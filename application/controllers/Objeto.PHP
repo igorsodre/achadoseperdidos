@@ -70,7 +70,7 @@ class Objeto extends Base_Controller
         return NULL;
     }
 
-    public function processaFoto($opt)
+    public function processaFoto($opt,$who=-1)
     {
         // se opt = 1, esta cadastrando o objeto se opt = 2 esta atualizando o objeto
         $arr = $this->input->post();
@@ -95,7 +95,7 @@ class Objeto extends Base_Controller
                 return $dados['foto'];
             } else {
                 if ($opt == 1) {
-                    redirect('objeto/cadastro');
+                    return NULL;
                 } else if ($opt == 2) {
                     return $arr['old_foto'];
                 }
@@ -103,7 +103,9 @@ class Objeto extends Base_Controller
         }
     }
 
-    /****************************************** requisicao  *************************/
+    /****************************************** requisicao  ************************
+     * @param $objetoId
+     */
     public function requisitarObjeto($objetoId)
     {
         $userId = $this->session->userdata('loginId');
@@ -120,6 +122,82 @@ class Objeto extends Base_Controller
             $this->objeto_model->salvar($requisicao);
             redirect('objeto/listagemObjetos');
         }
+    }
+
+    /******************************* atualizacao *************************************
+     * @param $objetoId
+     */
+    public function atualizacaoObjeto($objetoId)
+    {
+        $dados['objeto'] = $this->objeto_model->buscarporId(\Entity\Obj::getCaminho(), $objetoId);
+        $this->load->view('objeto/objectUpdate', $dados);
+    }
+
+    public function atualizacaoObjetoAction()
+    {
+        $arr = $this->input->post();
+        die(var_dump($arr));
+    }
+
+    /************************************** admin operations *************/
+    public function adminShowObjetcts()
+    {
+        $dados['perdidos'] = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 0, false);
+        $dados['requisitados'] = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 1, false);
+        $dados['devolvidos'] = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 2, false);
+        //die(var_dump($dados));
+        $this->load->view('objeto/adminShowObject', $dados);
+    }
+
+    public function adminEditObject($id)
+    {
+        $dados['objeto'] = $this->objeto_model->buscarPorId(\Entity\Obj::getCaminho(), $id);
+        //die(var_dump($dados));
+        $this->load->view('objeto/adminObjectUpdate', $dados);
+    }
+
+    public function adminReturnObject($id)
+    {
+        $dados['objeto'] = $this->objeto_model->buscarporId(\Entity\Obj::getCaminho(), $id);
+        die(var_dump("cheguei aqui no devolver objeto", $dados));
+    }
+
+    public function adminNewObject()
+    {
+        $this->load->view('objeto/adminObjectCadastre');
+    }
+
+    public function adminUpdateObjectAction()
+    {
+        if(($info = $this->validaAdminUpdateObject()) != NULL){
+            $anObj = new \Entity\Obj();
+            $anObj->arrayToObjeto($info);
+            $anObj->setId($info['id']);
+            $this->objeto_model->alterar($anObj);
+            redirect('objeto/adminShowObjetcts');
+        }
+        else{
+            redirect('objeto/adminEditObject/'.$info['id']);
+        }
+    }
+
+    public function validaAdminUpdateObject()
+    {
+        $this->form_validation->set_rules('identificacao', 'identificacao', 'required|max_length[40]');
+        $this->form_validation->set_rules('descricao', 'descricao', 'required|max_length[200]');
+        $arr = $this->input->post();
+        if ($this->form_validation->run()) {
+            if (($picturePath = $this->processaFoto(2)) != NULL) {
+                $arr['foto'] = $picturePath;
+                $arr['status'] = 0;
+                $arr['data'] = date("Y-m-d");
+                $id = $arr['idperfil'];
+                $arr['idperfil'] = $this->objeto_model->buscarPorId(\Entity\Perfil::getCaminho(), $id);
+                //die(var_dump($arr));
+                return $arr;
+            }
+        }
+        return NULL;
     }
 }
 
