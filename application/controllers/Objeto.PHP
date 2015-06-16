@@ -136,7 +136,32 @@ class Objeto extends Base_Controller
     public function atualizacaoObjetoAction()
     {
         $arr = $this->input->post();
-        die(var_dump($arr));
+        if(($info = $this->validaUsuarioUpdateObject()) != NULL){
+            $anObj = new \Entity\Obj();
+            $anObj->arrayToObjeto($info);
+            $anObj->setId($info['id']);
+            $this->objeto_model->alterar($anObj);
+            redirect('objeto/meusObjetos');
+        }else{
+            redirect('objeto/atualizacaoObjeto/'.$arr['id']);
+        }
+    }
+    public function validaUsuarioUpdateObject(){
+        $this->form_validation->set_rules('identificacao', 'identificacao', 'required|max_length[40]');
+        $this->form_validation->set_rules('descricao', 'descricao', 'required|max_length[200]');
+        $arr = $this->input->post();
+        if ($this->form_validation->run()) {
+            if (($picturePath = $this->processaFoto(2)) != NULL) {
+                $arr['foto'] = $picturePath;
+                $arr['status'] = 0;
+                $arr['data'] = date("Y-m-d");
+                $id = $this->session->userdata('loginId');
+                $arr['idperfil'] = $this->objeto_model->buscarPorId(\Entity\Perfil::getCaminho(), $id);
+                //die(var_dump($arr));
+                return $arr;
+            }
+        }
+        return NULL;
     }
 
     /************************************** admin operations *************/

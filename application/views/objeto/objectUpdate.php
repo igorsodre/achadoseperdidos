@@ -20,6 +20,15 @@
                     <label for="objUpdteIdDes" class="teal-text" style="font-size: 18">Descrição</label>
                 </div>
             </div>
+            <div class="col s12 center-align">
+                <button id="myPicButon" type="button" class="btn waves-effect red darken-1">ADD NEW PIC</button>
+                <script>
+                    $('#myPicButon').click(function(){
+                        $('#userUpdateObj').click();
+                    });
+                </script>
+            </div>
+            <input id="userUpdateObj" type="file" name="foto" style="display: none;">
             <input type="hidden" name="old_foto" value="<?= $objeto->getFoto() ?>">
             <input type="hidden" name="id" value="<?= $objeto->getId() ?>">
             <input type="hidden" name="status" value="<?= $objeto->getStatus() ?>">
