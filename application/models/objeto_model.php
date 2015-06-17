@@ -28,4 +28,8 @@ class Objeto_Model extends Base_Model
         }
         return $objetos;
     }
+    public function PessoasDessaRequisicao($id){
+        $query = $this->em->createQuery('SELECT obj FROM \Entity\Obj obj JOIN ent');
+        //$query->select('obj')->form('\Entity\obj','obj')->join('\Entity\Requisicao' 'ent','ent.idObjeto=obj.id');
+    }
 }

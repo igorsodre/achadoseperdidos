@@ -28,7 +28,7 @@ class Requisicao extends \BaseEntity
     private $idObjeto;
 
     /**
-     ** @OneToOne(targetEntity="Perfil")
+     ** @OneToOne(targetEntity="Perfil", fetch="EAGER")
      ** @JoinColumn(name="perfil_idperfil", referencedColumnName="idperfil", nullable=false)
      */
     private $idPerfil;

@@ -18,9 +18,9 @@ class Objeto extends Base_Controller
     /***************************   listagem          *****************************/
     public function listagemObjetos()
     {
-        $firstResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 0, false);
-        $secondResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 1, false);
-        $dados['objetos'] = array_merge($firstResult, $secondResult);
+        $dados['objetos'] = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 0, false);
+        //$secondResult = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'status', 1, false);
+        //$dados['objetos'] = array_merge($firstResult, $secondResult);
         $this->load->view('objeto/showObjects', $dados);
     }
 
@@ -70,7 +70,7 @@ class Objeto extends Base_Controller
         return NULL;
     }
 
-    public function processaFoto($opt,$who=-1)
+    public function processaFoto($opt, $who = -1)
     {
         // se opt = 1, esta cadastrando o objeto se opt = 2 esta atualizando o objeto
         $arr = $this->input->post();
@@ -136,17 +136,19 @@ class Objeto extends Base_Controller
     public function atualizacaoObjetoAction()
     {
         $arr = $this->input->post();
-        if(($info = $this->validaUsuarioUpdateObject()) != NULL){
+        if (($info = $this->validaUsuarioUpdateObject()) != NULL) {
             $anObj = new \Entity\Obj();
             $anObj->arrayToObjeto($info);
             $anObj->setId($info['id']);
             $this->objeto_model->alterar($anObj);
             redirect('objeto/meusObjetos');
-        }else{
-            redirect('objeto/atualizacaoObjeto/'.$arr['id']);
+        } else {
+            redirect('objeto/atualizacaoObjeto/' . $arr['id']);
         }
     }
-    public function validaUsuarioUpdateObject(){
+
+    public function validaUsuarioUpdateObject()
+    {
         $this->form_validation->set_rules('identificacao', 'identificacao', 'required|max_length[40]');
         $this->form_validation->set_rules('descricao', 'descricao', 'required|max_length[200]');
         $arr = $this->input->post();
@@ -184,7 +186,10 @@ class Objeto extends Base_Controller
     public function adminReturnObject($id)
     {
         $dados['objeto'] = $this->objeto_model->buscarporId(\Entity\Obj::getCaminho(), $id);
-        die(var_dump("cheguei aqui no devolver objeto", $dados));
+        $arr = $this->objeto_model->buscarEntidadePorPropriedade(\Entity\Requisicao::getCaminho(), 'idObjeto', $id);
+        //die(var_dump($dados));
+        $dados['requisicao'] = $arr[0];
+        $this->load->view('objeto/adminReturnObject', $dados);
     }
 
     public function adminNewObject()
@@ -194,15 +199,14 @@ class Objeto extends Base_Controller
 
     public function adminUpdateObjectAction()
     {
-        if(($info = $this->validaAdminUpdateObject()) != NULL){
+        if (($info = $this->validaAdminUpdateObject()) != NULL) {
             $anObj = new \Entity\Obj();
             $anObj->arrayToObjeto($info);
             $anObj->setId($info['id']);
             $this->objeto_model->alterar($anObj);
             redirect('objeto/adminShowObjetcts');
-        }
-        else{
-            redirect('objeto/adminEditObject/'.$info['id']);
+        } else {
+            redirect('objeto/adminEditObject/' . $info['id']);
         }
     }
 
