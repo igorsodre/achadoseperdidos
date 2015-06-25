@@ -27,3 +27,7 @@ $accessOption em /controllers/Usuario/index
  userRg
  userFone
  }
+
+requisicao status:
+0 nao devolvido
+1 devolvido

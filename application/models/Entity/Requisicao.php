@@ -20,7 +20,7 @@ class Requisicao extends \BaseEntity
      ** @Column(name="idrequisicao", type="integer", nullable=false)
      ** @GeneratedValue(strategy="AUTO")
      */
-    private $reqId;
+    private $id;
     /**
      * @OneToOne(targetEntity="Obj", fetch="EAGER")
      * @JoinColumn(name="objeto_idobjeto", referencedColumnName="idobjeto", nullable=false)
@@ -32,6 +32,19 @@ class Requisicao extends \BaseEntity
      ** @JoinColumn(name="perfil_idperfil", referencedColumnName="idperfil", nullable=false)
      */
     private $idPerfil;
+
+    /**
+     * @Column(name="status",nullable=false)
+     */
+    protected $status;
+
+    /**
+     * @return mixed
+     */
+    public function getReqId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return mixed
@@ -64,6 +77,23 @@ class Requisicao extends \BaseEntity
     {
         $this->idPerfil = $idPerfil;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
     public static function getCaminho(){
         return 'Entity\Requisicao';
     }

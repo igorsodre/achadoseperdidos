@@ -211,29 +211,64 @@ class Usuario extends Base_Controller
         }
         return NULL;
     }
+
     /*************************************************************/
-    public function listarUsuarios(){
+    public function listarUsuarios()
+    {
         $dados['users'] = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'tipo', 1, false);
-        $dados['admins'] = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'tipo',0, false);
+        $dados['admins'] = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'tipo', 0, false);
         //die(var_dump($dados));
-        $this->load->view('usuario/adminShowUsers',$dados);
+        $this->load->view('usuario/adminShowUsers', $dados);
     }
-    public function excluirUsuario($id){
-        die(var_dump("cheguei no exluir usuario",$id));
+
+    public function excluirUsuario($id)
+    {
+        $usuario = $this->usuario_model->buscarPorId(\Entity\Perfil::getCaminho(), $id);
+        $objetos = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Obj::getCaminho(), 'perfil', $usuario->getId());
+        foreach ($objetos as $objeto) {
+            $reqObj = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Requisicao::getCaminho(), 'idObjeto', $objeto->getId());
+            if (isset($reqObj)) {
+                foreach ($reqObj as $req) {
+                    $this->usuario_model->excluir($req);
+                }
+            }
+            $this->usuario_model->excluir($objeto);
+
+        }
+        $reqUser = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Requisicao::getCaminho(), 'idPerfil', $usuario->getId());
+        if (isset($reqUser)) {
+            foreach ($reqUser as $req) {
+                $this->usuario_model->excluir($req);
+            }
+        }
+        $this->usuario_model->excluir($usuario);
+        //die(var_dump($usuario, $objetos, $reqObj, $reqUser));
+//        $this->usuario_model->excluir($usuario);
+        redirect('usuario/listarUsuarios');
     }
-    public function excluirAdmin($id){
-        die(var_dump("cheguei no exluir admin",$id));
+
+    public function excluirAdmin($id)
+    {
+        die(var_dump("cheguei no exluir admin", $id));
     }
-    public function adminEditarUsuario($id){
-        die(var_dump("cheguei aqui no editar usuario",$id));
+
+    public function adminEditarUsuario($id)
+    {
+        die(var_dump("cheguei aqui no editar usuario", $id));
     }
-    public function adminEditarAdmin($id){
-        die(var_dump("cheuguei aqui no editar admin",$id));
+
+    public function adminEditarAdmin($id)
+    {
+        die(var_dump("cheuguei aqui no editar admin", $id));
     }
-    public function adminNovoUsuario(){
+
+    public function adminNovoUsuario()
+    {
         die(var_dump("cheguei aqui admin novo usuario"));
     }
-    public function adminNovoAdmin(){
+
+    public function adminNovoAdmin()
+    {
         die(var_dump("cheguei aqui admin novo admin"));
     }
 

@@ -45,7 +45,7 @@ class Objeto extends Base_Controller
             $objeto = new Entity \ Obj();
             $objeto->arrayToObjeto($arr);
             $this->objeto_model->salvar($objeto);
-            redirect('objeto/cadastro');
+            redirect('objeto/listagemObjetos');
         } else {
             redirect('objeto/cadastro');
         }
@@ -100,7 +100,7 @@ class Objeto extends Base_Controller
                     return $arr['old_foto'];
                 }
             }
-        }
+        } else return NULL;
     }
 
     /****************************************** requisicao  ************************
@@ -115,6 +115,7 @@ class Objeto extends Base_Controller
         $objeto->setStatus(1);
         $requisicao->setIdObjeto($objeto);
         $requisicao->setIdPerfil($user);
+        $requisicao->setStatus(0);
         if ($this->objeto_model->verificaRequisicao(\Entity\Requisicao::getCaminho(), $objetoId, $userId)) {
             //TODO setar mensagem do flush
             redirect('objeto/listagemObjetos');
@@ -197,6 +198,39 @@ class Objeto extends Base_Controller
         $this->load->view('objeto/adminObjectCadastre');
     }
 
+    public function adminCreateNewObject()
+    {
+        $arr = $this->adminValidacaoFomulario();
+        if ($arr != NULL) {
+            $objeto = new Entity \ Obj();
+            $objeto->arrayToObjeto($arr);
+            $this->objeto_model->salvar($objeto);
+            redirect('objeto/adminShowObjetcts');
+        } else {
+            redirect('objeto/adminNewObject');
+        }
+        //die(var_dump($this->input->post()));
+    }
+
+    public function adminValidacaoFomulario()
+    {
+        $this->form_validation->set_rules('identificacao', 'identificacao', 'required|max_length[40]');
+        $this->form_validation->set_rules('descricao', 'descricao', 'required|max_length[200]');
+        $arr = $this->input->post();
+        if ($this->form_validation->run()) {
+            if (($picturePath = $this->processaFoto(1)) != NULL) {
+                $arr['foto'] = $picturePath;
+                $arr['status'] = 0;
+                $arr['data'] = date("Y-m-d");
+                $id = $this->session->userdata('loginId');
+                $arr['idperfil'] = $this->objeto_model->buscarPorId(\Entity\Perfil::getCaminho(), $id);
+                //die(var_dump($arr));
+                return $arr;
+            }
+        }
+        return NULL;
+    }
+
     public function adminUpdateObjectAction()
     {
         if (($info = $this->validaAdminUpdateObject()) != NULL) {
@@ -208,6 +242,15 @@ class Objeto extends Base_Controller
         } else {
             redirect('objeto/adminEditObject/' . $info['id']);
         }
+    }
+
+    public function adminDevolucao($idReq = -1)
+    {
+        $req = $this->objeto_model->buscarPorId(\Entity\Requisicao::getCaminho(), $idReq);
+        $req->setStatus(1);
+        $req->getIdObjeto()->setStatus(2);
+        $this->objeto_model->alterar($req);
+        redirect('objeto/adminShowObjetcts');
     }
 
     public function validaAdminUpdateObject()
