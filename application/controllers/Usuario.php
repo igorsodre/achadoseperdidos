@@ -254,7 +254,47 @@ class Usuario extends Base_Controller
 
     public function adminEditarUsuario($id)
     {
-        die(var_dump("cheguei aqui no editar usuario", $id));
+        $dados['user'] = $this->usuario_model->buscarPorId(\Entity\Perfil::getCaminho(), $id);
+        $this->load->view('usuario/adminUserUpdate', $dados);
+    }
+
+    public function adminUserUpdate(){
+        if(($user = $this->adminValidaUpdateForm()) != NULL){
+            $usuario = new \Entity\Perfil();
+            $usuario->setId($user['id']);
+            $usuario->arrayToObjeto($user);
+            $this->usuario_model->alterar($usuario);
+            redirect('usuario/listarUsuarios');
+        }
+        $id = $this->input->post('id');
+        redirect('usuario/adminEditarUsuario/'.$id);
+    }
+    public function adminValidaUpdateForm(){
+        $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[4]');
+        $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
+        $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
+        $this->form_validation->set_rules('telefone', 'telefone', 'numeric|max_length[18]');
+        $arr = $this->input->post();
+        if ($this->form_validation->run()) {
+            $email = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'email', $arr['email'], false);
+            $rg = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'rg', $arr['rg'], false);
+            $objeto = $this->usuario_model->buscarPorId(\Entity\Perfil::getCaminho(), $arr['id']);
+            if (!empty($rg)) {
+                if ($rg[0]->getRg() != $objeto->getRg()) {
+                    goto L2;
+                }
+            }
+            if (!empty($email)) {
+                if ($email[0]->getEmail() != $objeto->getEmail()) {
+                    goto L2;
+                }
+            }
+            return $arr;
+        } else {
+            L2:;
+            redirect('usuario/adminEditarUsuario/' . $arr['id']);
+        }
+        return NULL;
     }
 
     public function adminEditarAdmin($id)
@@ -264,9 +304,49 @@ class Usuario extends Base_Controller
 
     public function adminNovoUsuario()
     {
-        die(var_dump("cheguei aqui admin novo usuario"));
+        $this->load->view('usuario/adminUserCadastre');
+    }
+    public function adminNewUser(){
+        if(($user = $this->adminValidaCadastroForm())!= NULL){
+            $usuario = new Entity \ Perfil();
+            $usuario->arrayToObjeto($user);
+            $this->usuario_model->salvar($usuario);
+            //TODO colocar o flush no header
+            redirect('usuario/listarUsuarios');
+        }
+        else{
+            redirect('usuario/adminNovoUsuario');
+        }
     }
 
+    public function adminValidaCadastroForm()
+    {
+        $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[3]');
+        $this->form_validation->set_rules('login', 'login', 'required|max_length[30]|min_length[4]');
+        $this->form_validation->set_rules('senha', 'senha', 'required|max_length[30]|min_length[4]');
+        $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
+        $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
+        $this->form_validation->set_rules('telefone', 'telefone', 'numeric|max_length[18]');
+
+        if ($this->form_validation->run()) {
+            $arr = $this->input->post();
+            $login = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'login', $arr['login'], false);
+            $email = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'email', $arr['email'], false);
+            $rg = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'rg', $arr['rg'], false);
+            //die(var_dump($login,$email,$rg));
+            if (!empty($login) || !empty($email) || !empty($rg)) {
+                goto L1;
+            }
+            $arr['tipo'] = 1;
+            $arr['senha'] = md5($arr['senha']);
+
+            return $arr;
+        } else {
+            L1:;
+            //TODO colocar o flush no header
+            redirect('usuario/cadastro');
+        }
+    }
     public function adminNovoAdmin()
     {
         die(var_dump("cheguei aqui admin novo admin"));

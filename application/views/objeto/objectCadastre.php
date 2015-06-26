@@ -20,7 +20,7 @@
             <div class="col s12 center-align">
                 <button id="fotoButton" type="button" class="btn waves-effect red darken-1">ADD FOTO</button>
                 <script>
-                    $('#fotoButton').click(function () {
+                    $('#fotoButton').on("click",function () {
                         $('#objCreateFoto').click();
                     });
                 </script>
