@@ -1,4 +1,5 @@
-<?php ?>
+
+</main>
 <footer class="page-footer card-panel blue darken-1">
     <div class="container navbar-fixed-bottom">
 
@@ -9,6 +10,6 @@
         </div>
     </div>
 </footer>
-</div>
+
 </body>
 </html

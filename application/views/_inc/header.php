@@ -9,16 +9,20 @@
     <link rel="stylesheet" href="<?php /*echo base_url(); */ ?>public/css/bootstrap.css"/>-->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>public/css/materialize.min.css"
           media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>public/css/materialize.css"
+          media="screen,projection"/>
     <!--<script src="<? /*= base_url() . "public/js/vendor/jquery-2.1.3.min.js" */ ?>"></script>-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col s12 card-panel text-center">
             <a class="" href="<?= base_url() ?>"><h2 class="flow-text center-align"> Sistema Achados e Perdidos </h2>
             </a>
         </div>
     </div>
+</div>
+<main class="container">
