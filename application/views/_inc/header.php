@@ -16,13 +16,14 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.js"></script>
 </head>
-<body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col s12 card-panel text-center">
-            <a class="" href="<?= base_url() ?>"><h2 class="flow-text center-align"> Sistema Achados e Perdidos </h2>
-            </a>
+<body class="container-fluid">
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="<?= base_url() ?>" class="brand-logo center">Achados e Perdidos</a>
         </div>
-    </div>
+    </nav>
 </div>
+<div class="row"><p></p></div>
+
 <main class="container">
