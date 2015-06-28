@@ -70,15 +70,6 @@
         </div>
     </div>
     <script>
-        function confirmar(url) {
-            if (confirm('Tem certeza?')) {
-                //console.log(url);
-                window.location.href = url;
-            }
-            else {
-                return false;
-            }
-        }
         $('a').css('cursor', 'pointer');
     </script>
 <?php $this->load->view('_inc/footer') ?>

@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="<?php /*echo base_url(); */ ?>public/css/bootstrap.css"/>-->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>public/css/materialize.min.css"
           media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="<?=base_url().'public/css/sweetalert-master/dist/sweetalert.css'?>"
+          media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>public/css/materialize.css"
           media="screen,projection"/>
-    <!--<script src="<? /*= base_url() . "public/js/vendor/jquery-2.1.3.min.js" */ ?>"></script>-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="<?=base_url().'public/css/sweetalert-master/dist/sweetalert.min.js'?>"></script>
+    <script src="<?=base_url().'public/css/sweetalert-master/dist/sweetalert-dev.js'?>"></script>
+    <script src="<?= base_url() . "public/js/vendor/jquery-2.1.3.min.js"  ?>"></script>
+    <script src="<?= base_url() . "public/js/achadoseperdidos.js"  ?>"></script>
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>public/js/materialize.js"></script>
 </head>
 <body class="container-fluid">

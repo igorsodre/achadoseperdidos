@@ -45,8 +45,15 @@ class Objeto extends Base_Controller
             $objeto = new Entity \ Obj();
             $objeto->arrayToObjeto($arr);
             $this->objeto_model->salvar($objeto);
+
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Objeto cadastrado com sucesso!');
             redirect('objeto/listagemObjetos');
         } else {
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Objeto Não foi cadastrado!');
             redirect('objeto/cadastro');
         }
     }
@@ -117,10 +124,15 @@ class Objeto extends Base_Controller
         $requisicao->setIdPerfil($user);
         $requisicao->setStatus(0);
         if ($this->objeto_model->verificaRequisicao(\Entity\Requisicao::getCaminho(), $objetoId, $userId)) {
-            //TODO setar mensagem do flush
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Não foi feita a requisição!');
             redirect('objeto/listagemObjetos');
         } else {
             $this->objeto_model->salvar($requisicao);
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Requisição realizada com sucesso!');
             redirect('objeto/listagemObjetos');
         }
     }
@@ -142,8 +154,14 @@ class Objeto extends Base_Controller
             $anObj->arrayToObjeto($info);
             $anObj->setId($info['id']);
             $this->objeto_model->alterar($anObj);
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Objeto atualizado com sucesso!');
             redirect('objeto/meusObjetos');
         } else {
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Falha na Atualização!');
             redirect('objeto/atualizacaoObjeto/' . $arr['id']);
         }
     }
@@ -205,8 +223,14 @@ class Objeto extends Base_Controller
             $objeto = new Entity \ Obj();
             $objeto->arrayToObjeto($arr);
             $this->objeto_model->salvar($objeto);
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Objeto Cadastrado com sucesso!');
             redirect('objeto/adminShowObjetcts');
         } else {
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Objeto Não foi cadastrado!');
             redirect('objeto/adminNewObject');
         }
         //die(var_dump($this->input->post()));
@@ -238,8 +262,14 @@ class Objeto extends Base_Controller
             $anObj->arrayToObjeto($info);
             $anObj->setId($info['id']);
             $this->objeto_model->alterar($anObj);
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Objeto atualizado com sucesso!');
             redirect('objeto/adminShowObjetcts');
         } else {
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Objeto Não foi atualizado!');
             redirect('objeto/adminEditObject/' . $info['id']);
         }
     }
@@ -250,6 +280,9 @@ class Objeto extends Base_Controller
         $req->setStatus(1);
         $req->getIdObjeto()->setStatus(2);
         $this->objeto_model->alterar($req);
+        $this->session->set_userdata('mensagem', '=)');
+        $this->session->set_userdata('mensagemTipo', 'success');
+        $this->session->set_userdata('subtitulo', 'Objeto Devolvido!');
         redirect('objeto/adminShowObjetcts');
     }
 

@@ -93,8 +93,14 @@ class Usuario extends Base_Controller
                 return $usuario[0];
             }
         } else {
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Usuário ou senha incorretos!');
             redirect('usuario/loginScreen');
         }
+        $this->session->set_userdata('mensagem', '=(');
+        $this->session->set_userdata('mensagemTipo', 'error');
+        $this->session->set_userdata('subtitulo', 'Usuário ou senha incorretos!');
         redirect('usuario/loginScreen');
 
     }
@@ -121,11 +127,19 @@ class Usuario extends Base_Controller
 
     public function cadastroAction()
     {
-        $arr = $this->validaCadastroForm();
-        $usuario = new Entity \ Perfil();
-        $usuario->arrayToObjeto($arr);
-        $this->usuario_model->salvar($usuario);
-        //TODO colocar o flush no header
+        if (($arr = $this->validaCadastroForm()) != NULL) {
+            $usuario = new Entity \ Perfil();
+            $usuario->arrayToObjeto($arr);
+            $this->usuario_model->salvar($usuario);
+
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Cadastro Realizado com sucesso!');
+        }else{
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Alguns campos do formulário foram preenchidos incorretamente!');
+        }
         redirect('usuario/index');
     }
 
@@ -153,8 +167,7 @@ class Usuario extends Base_Controller
             return $arr;
         } else {
             L1:;
-            //TODO colocar o flush no header
-            redirect('usuario/cadastro');
+            return NULL;
         }
     }
 
@@ -175,6 +188,9 @@ class Usuario extends Base_Controller
         $usuario->setId($arr['id']);
         $usuario->arrayToObjeto($arr);
         $this->usuario_model->alterar($usuario);
+        $this->session->set_userdata('mensagem', '=)');
+        $this->session->set_userdata('mensagemTipo', 'success');
+        $this->session->set_userdata('subtitulo', 'Cadastro Atualizado com sucesso!');
         switch ($this->session->userdata('loginType')) {
             case '0':
                 $this->listaUsuarios();
@@ -207,6 +223,9 @@ class Usuario extends Base_Controller
             return $arr;
         } else {
             L2:;
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Não foi realizada a atualização!');
             redirect('usuario/atualizacadastro/' . $arr['id']);
         }
         return NULL;
@@ -244,6 +263,9 @@ class Usuario extends Base_Controller
         $this->usuario_model->excluir($usuario);
         //die(var_dump($usuario, $objetos, $reqObj, $reqUser));
 //        $this->usuario_model->excluir($usuario);
+        $this->session->set_userdata('mensagem', '=)');
+        $this->session->set_userdata('mensagemTipo', 'success');
+        $this->session->set_userdata('subtitulo', 'Usuário excluído com sucesso!');
         redirect('usuario/listarUsuarios');
     }
 
@@ -258,18 +280,27 @@ class Usuario extends Base_Controller
         $this->load->view('usuario/adminUserUpdate', $dados);
     }
 
-    public function adminUserUpdate(){
-        if(($user = $this->adminValidaUpdateForm()) != NULL){
+    public function adminUserUpdate()
+    {
+        if (($user = $this->adminValidaUpdateForm()) != NULL) {
             $usuario = new \Entity\Perfil();
             $usuario->setId($user['id']);
             $usuario->arrayToObjeto($user);
             $this->usuario_model->alterar($usuario);
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Cadastro Atualizado com sucesso!');
             redirect('usuario/listarUsuarios');
         }
         $id = $this->input->post('id');
-        redirect('usuario/adminEditarUsuario/'.$id);
+        $this->session->set_userdata('mensagem', '=(');
+        $this->session->set_userdata('mensagemTipo', 'error');
+        $this->session->set_userdata('subtitulo', 'Erro na atualização de cadastro!');
+        redirect('usuario/adminEditarUsuario/' . $id);
     }
-    public function adminValidaUpdateForm(){
+
+    public function adminValidaUpdateForm()
+    {
         $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
         $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
@@ -306,15 +337,21 @@ class Usuario extends Base_Controller
     {
         $this->load->view('usuario/adminUserCadastre');
     }
-    public function adminNewUser(){
-        if(($user = $this->adminValidaCadastroForm())!= NULL){
+
+    public function adminNewUser()
+    {
+        if (($user = $this->adminValidaCadastroForm()) != NULL) {
             $usuario = new Entity \ Perfil();
             $usuario->arrayToObjeto($user);
             $this->usuario_model->salvar($usuario);
-            //TODO colocar o flush no header
+            $this->session->set_userdata('mensagem', '=)');
+            $this->session->set_userdata('mensagemTipo', 'success');
+            $this->session->set_userdata('subtitulo', 'Usuario adicionado com sucesso!');
             redirect('usuario/listarUsuarios');
-        }
-        else{
+        } else {
+            $this->session->set_userdata('mensagem', '=(');
+            $this->session->set_userdata('mensagemTipo', 'error');
+            $this->session->set_userdata('subtitulo', 'Não foi possível adicionar usuário!');
             redirect('usuario/adminNovoUsuario');
         }
     }
@@ -343,10 +380,10 @@ class Usuario extends Base_Controller
             return $arr;
         } else {
             L1:;
-            //TODO colocar o flush no header
-            redirect('usuario/cadastro');
+            return NULL;
         }
     }
+
     public function adminNovoAdmin()
     {
         die(var_dump("cheguei aqui admin novo admin"));
