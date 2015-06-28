@@ -22,9 +22,9 @@
                             <td><img src="<?= base_url() . $objeto->getFoto() ?>" class="responsive-img"
                                      style="height: 100px">
                             </td>
-                            <td><a class="btn waves-effect  blue darken-1"
-                                   href="<?= base_url() . 'index.php/objeto/requisitarObjeto/' . $objeto->getId() ?>">
-                                    Requisitar Devolucao </a></td>
+                            <?php $url = base_url().'index.php/objeto/requisitarObjeto/'.$objeto->getId() ?>
+                            <td>
+                                <a class="btn waves-effect blue darken-1" onclick="return confirmar('<?= $url ?>')"> Requisitar Devolucao </a></td>
                         </tr>
 
                     <?php }

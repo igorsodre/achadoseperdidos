@@ -8,14 +8,14 @@
         <form id="updt-obj-form" method="post" class="col s12" action="<?= base_url() . 'index.php/objeto/atualizacaoObjetoAction' ?>"
               enctype="multipart/form-data">
             <div class="input-field col s6 offset-s3">
-                <input id="objUpdteId" class="validade" type="text" name="identificacao"
+                <input required pattern=".{2,45}" id="objUpdteId" class="validade" type="text" name="identificacao"
                        value="<?= $objeto->getIdentificacao() ?>">
                 <label for="objUpdteIdId" class="teal-text" style="font-size: 18">Identificação</label>
             </div>
 
             <div class="col s12">
                 <div class="input-field col s6 offset-s3">
-                    <textarea class="materialize-textarea" id="objUpdateDes" cols="20" rows="3" name="descricao"
+                    <textarea required class="materialize-textarea" id="objUpdateDes" cols="20" rows="3" name="descricao"
                               form="updt-obj-form"><?= $objeto->getDescricao() ?></textarea>
                     <label for="objUpdteIdDes" class="teal-text" style="font-size: 18">Descrição</label>
                 </div>

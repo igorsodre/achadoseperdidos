@@ -3,40 +3,41 @@
         <div class="col s12">
             <h3 class="center-align">Cadastro de Usuário</h3>
         </div>
-        <form name="cadastreUserForm" onsubmit="return validateFormUserCadastre()" class="col s12" action="<?= base_url() . 'index.php/usuario/adminNewUser' ?>" method="post">
+        <form name="cadastreUserForm" onsubmit="return validateFormUserCadastre()" class="col s12"
+              action="<?= base_url() . 'index.php/usuario/adminNewUser' ?>" method="post">
             <div class="row">
                 <div class="input-field col s6">
-                    <input class="validade" id="cadastreNome" type="text" name="nome">
+                    <input required pattern=".{3,45}" class="validade" id="cadastreNome" type="text" name="nome">
                     <label for="cadastreNome" class="teal-text"> Nome </label>
                 </div>
                 <div class="input-field col s6">
-                    <input class="validade" id="cadastreLogin" type="text" name="login">
+                    <input required pattern=".{4,45}" class="validade" id="cadastreLogin" type="text" name="login">
                     <label for="cadastreLogin" class="teal-text"> Login </label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input class="validade" id="cadastreSenha" type="password" name="senha"
+                    <input required pattern=".{4,30}" class="validade" id="cadastreSenha" type="password" name="senha"
                         >
                     <label for="cadastreSenha" class="teal-text">Senha</label>
                 </div>
                 <div class="input-field col s6">
-                    <input class="validade" id="cadastreEmail" type="text" name="email">
+                    <input required pattern=".{4,30}" class="validade" id="cadastreEmail" type="email" name="email">
                     <label for="cadastreEmail" class="teal-text">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input class="validade" id="cadastreTelefone" type="text" name="telefone">
+                    <input required pattern=".{9,15}" class="validade" id="cadastreTelefone" type="text" name="telefone">
                     <label for="cadastreTelefone" class="teal-text">Telefone</label>
                 </div>
 
                 <div class="input-field col s6">
-                    <input class="validade" id="cadastreRg" type="text" name="rg">
+                    <input required pattern=".{6,15}" class="validade" id="cadastreRg" type="text" name="rg">
                     <label for="cadastreRg" class="teal-text">RG</label>
                 </div>
             </div>
-            <input type="hidden" name="tipo" value="1">
+            <input required="" type="hidden" name="tipo" value="1">
 
             <div class="col s2 offset-s5">
                 <button CLASS="btn waves-effect blue darken-1" value="GO">GO</button>

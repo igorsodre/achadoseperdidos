@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7859d35-b67b-4c4d-9ace-c41827d2ea30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/achadoseperdidos.js" />
-      <change type="MOVED" beforePath="C:\wamp\www\achadoseperdidos\application\controllers\Objeto.PHP" afterPath="$PROJECT_DIR$/application/controllers/Objeto.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jQuery-Mask-Plugin" />
+      <change type="DELETED" beforePath="C:\wamp\www\achadoseperdidos\public\css\sweetalert-master\sweetalert.gif" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Usuario.php" afterPath="$PROJECT_DIR$/application/controllers/Usuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/usuario/adminShowUsers.php" afterPath="$PROJECT_DIR$/application/views/usuario/adminShowUsers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/achadoseperdidos.js" afterPath="$PROJECT_DIR$/public/js/achadoseperdidos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php" afterPath="$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/objeto/adminReturnObject.php" afterPath="$PROJECT_DIR$/application/views/objeto/adminReturnObject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/usuario/adminUserCadastre.php" afterPath="$PROJECT_DIR$/application/views/usuario/adminUserCadastre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php" afterPath="$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_inc/footer.php" afterPath="$PROJECT_DIR$/application/views/_inc/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_inc/header.php" afterPath="$PROJECT_DIR$/application/views/_inc/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/objeto/objectCadastre.php" afterPath="$PROJECT_DIR$/application/views/objeto/objectCadastre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/objeto/objectUpdate.php" afterPath="$PROJECT_DIR$/application/views/objeto/objectUpdate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/objeto/showObjects.php" afterPath="$PROJECT_DIR$/application/views/objeto/showObjects.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/usuario/userCadastre.php" afterPath="$PROJECT_DIR$/application/views/usuario/userCadastre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/usuario/userLogin.php" afterPath="$PROJECT_DIR$/application/views/usuario/userLogin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/usuario/userUpdate.php" afterPath="$PROJECT_DIR$/application/views/usuario/userUpdate.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="achadoseperdidos.iws" />
@@ -33,21 +43,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Usuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.116618" vertical-offset="3469" max-vertical-offset="7146">
-              <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
+            <state vertical-scroll-proportion="-34.185184" vertical-offset="6061" max-vertical-offset="7146">
+              <caret line="388" column="55" selection-start-line="388" selection-start-column="55" selection-end-line="388" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="npm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/vendor/npm.js">
+      <file leaf-file-name="objectCadastre.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/objeto/objectCadastre.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-              <caret line="0" column="105" selection-start-line="0" selection-start-column="105" selection-end-line="0" selection-end-column="105" />
+            <state vertical-scroll-proportion="0.6666667" vertical-offset="162" max-vertical-offset="756">
+              <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
+              <folding>
+                <element signature="e#1547#1568#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objectUpdate.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/objeto/objectUpdate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.481482" vertical-offset="176" max-vertical-offset="882">
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminObjectCadastre.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9338235" vertical-offset="122" max-vertical-offset="738">
+              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminShowUsers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/usuario/adminShowUsers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.185185" vertical-offset="868" max-vertical-offset="1440">
+              <caret line="62" column="105" selection-start-line="62" selection-start-column="105" selection-end-line="62" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -56,83 +98,11 @@
       <file leaf-file-name="achadoseperdidos.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/achadoseperdidos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc;n#confirmar#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminShowUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/usuario/adminShowUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="1440">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Perfil.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Entity/Perfil.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="3636">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/_inc/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3333335" vertical-offset="54" max-vertical-offset="612">
-              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/_inc/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="738">
-              <caret line="18" column="80" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Objeto.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Objeto.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="80.48148" vertical-offset="5107" max-vertical-offset="5652">
-              <caret line="163" column="76" selection-start-line="163" selection-start-column="76" selection-end-line="163" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="objeto_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/objeto_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="720">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1434485525988" expanded="true" signature="1174:1214" placeholder="SELECT obj F..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminUserUpdate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="828">
-              <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="89" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -145,20 +115,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/objeto/adminReturnObject.php" />
         <option value="$PROJECT_DIR$/Lembretes.php" />
         <option value="$PROJECT_DIR$/application/models/Entity/Requisicao.php" />
-        <option value="$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php" />
-        <option value="$PROJECT_DIR$/application/views/usuario/adminUserCadastre.php" />
-        <option value="$PROJECT_DIR$/application/views/objeto/objectCadastre.php" />
-        <option value="$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php" />
         <option value="$PROJECT_DIR$/public/css/materialize.css" />
-        <option value="$PROJECT_DIR$/public/js/achadoseperdidos.js" />
         <option value="$PROJECT_DIR$/application/views/usuario/adminShowUsers.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Objeto.php" />
+        <option value="$PROJECT_DIR$/application/views/objeto/adminReturnObject.php" />
+        <option value="$PROJECT_DIR$/application/views/usuario/userLogin.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Usuario.php" />
+        <option value="$PROJECT_DIR$/application/views/objeto/showObjects.php" />
         <option value="$PROJECT_DIR$/application/views/_inc/header.php" />
         <option value="$PROJECT_DIR$/application/views/_inc/footer.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Objeto.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Usuario.php" />
+        <option value="$PROJECT_DIR$/public/js/achadoseperdidos.js" />
+        <option value="$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php" />
+        <option value="$PROJECT_DIR$/application/views/usuario/userUpdate.php" />
+        <option value="$PROJECT_DIR$/application/views/usuario/userCadastre.php" />
+        <option value="$PROJECT_DIR$/application/views/usuario/adminUserCadastre.php" />
+        <option value="$PROJECT_DIR$/application/views/objeto/objectCadastre.php" />
+        <option value="$PROJECT_DIR$/application/views/objeto/objectUpdate.php" />
+        <option value="$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php" />
       </list>
     </option>
   </component>
@@ -214,6 +189,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,28 +250,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achadoseperdidos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achadoseperdidos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -315,28 +269,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achadoseperdidos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achadoseperdidos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usuario" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,28 +291,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="objeto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achadoseperdidos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achadoseperdidos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_inc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,7 +354,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,6 +379,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -477,9 +389,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -520,26 +429,26 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20574887" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20877458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -571,27 +480,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Entity/Obj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2106" max-vertical-offset="3240">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/objeto_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/base_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/objeto/adminReturnObject.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="702">
@@ -726,13 +614,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Objeto.php">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lembretes.php">
@@ -746,13 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1296">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/objeto/adminReturnObject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="702">
-          <caret line="31" column="73" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -805,46 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="738">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/usuario/userCadastre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="990">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/objeto/objectCadastre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="756">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/usuario/userUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="828">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22807017" vertical-offset="109683" max-vertical-offset="114570">
           <caret line="6100" column="23" selection-start-line="6100" selection-start-column="0" selection-end-line="6100" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/usuario/adminUserCadastre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="972">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,44 +707,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php">
+    <entry file="file://$PROJECT_DIR$/application/models/objeto_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="828">
-          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Entity/Perfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="3636">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="720">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/usuario/adminShowUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="1440">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_inc/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="738">
-          <caret line="18" column="80" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/achadoseperdidos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc;n#confirmar#0" expanded="false" />
+            <marker date="1434485525988" expanded="true" signature="-1:-1" placeholder="SELECT obj F..." />
           </folding>
         </state>
       </provider>
@@ -908,43 +721,148 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
           <caret line="0" column="105" selection-start-line="0" selection-start-column="105" selection-end-line="0" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/objeto/adminReturnObject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.042201836" vertical-offset="157" max-vertical-offset="702">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/objeto_model.php">
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/Perfil.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="720">
+        <state vertical-scroll-proportion="-2.516129" vertical-offset="1404" max-vertical-offset="3636">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1434485525988" expanded="true" signature="1174:1214" placeholder="SELECT obj F..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_inc/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3333335" vertical-offset="54" max-vertical-offset="612">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Objeto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.987156" vertical-offset="5107" max-vertical-offset="5652">
+          <caret line="163" column="76" selection-start-line="163" selection-start-column="76" selection-end-line="163" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/usuario/userLogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="80.48148" vertical-offset="5107" max-vertical-offset="5652">
-          <caret line="163" column="76" selection-start-line="163" selection-start-column="76" selection-end-line="163" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.29032257" vertical-offset="0" max-vertical-offset="612">
+          <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_inc/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7419355" vertical-offset="36" max-vertical-offset="594">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_inc/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33264887" vertical-offset="144" max-vertical-offset="810">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/usuario/adminShowUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.185185" vertical-offset="868" max-vertical-offset="1440">
+          <caret line="62" column="105" selection-start-line="62" selection-start-column="105" selection-end-line="62" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/usuario/userCadastre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36397058" vertical-offset="432" max-vertical-offset="990">
+          <caret line="35" column="53" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/usuario/adminUserCadastre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0919118" vertical-offset="108" max-vertical-offset="990">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/usuario/userUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16544117" vertical-offset="54" max-vertical-offset="828">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/usuario/adminUserUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2647059" vertical-offset="0" max-vertical-offset="828">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/achadoseperdidos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc;n#confirmar#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/objeto/showObjects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47058824" vertical-offset="212" max-vertical-offset="756">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.116618" vertical-offset="3469" max-vertical-offset="7146">
-          <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
+        <state vertical-scroll-proportion="-34.185184" vertical-offset="6061" max-vertical-offset="7146">
+          <caret line="388" column="55" selection-start-line="388" selection-start-column="55" selection-end-line="388" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/objeto/objectCadastre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6666667" vertical-offset="162" max-vertical-offset="756">
+          <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
+          <folding>
+            <element signature="e#1547#1568#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/objeto/objectUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.481482" vertical-offset="176" max-vertical-offset="882">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/objeto/adminObjectCadastre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9338235" vertical-offset="122" max-vertical-offset="738">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
           <folding />
         </state>
       </provider>

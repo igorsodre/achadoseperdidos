@@ -6,13 +6,13 @@
         <form id="add-obj-form" class="col s12" action="<?= base_url() . 'index.php/objeto/adminCreateNewObject' ?>"
               method="post" enctype="multipart/form-data">
             <div class="input-field col s6 offset-s3">
-                <input id="objCreateId" class="validade" type="text" name="identificacao"
+                <input required pattern=".{2,45}" id="objCreateId" class="validade" type="text" name="identificacao"
                        placeholder="insira uma identificao para o objeto">
                 <label for="objCreateId" class="teal-text" style="font-size: 18">Identificação</label>
             </div>
             <div class="col s12">
                 <div class="input-field col s6 offset-s3">
-                    <textarea class="materialize-textarea" id="objCreateDes" cols="20" rows="3" name="descricao"
+                    <textarea required class="materialize-textarea" id="objCreateDes" cols="20" rows="3" name="descricao"
                               form="add-obj-form"></textarea>
                     <label for="objCreateDes" class="teal-text" style="font-size: 18">Descrição</label>
                 </div>
@@ -24,7 +24,7 @@
                         $('#objCreateFoto').click();
                     });
                 </script>
-                <input id="objCreateFoto" type="file" name="foto" style="display: none">
+                <input required id="objCreateFoto" type="file" name="foto" style="display: none">
             </div>
             <div class="row"><p></p></div>
             <div class="col s12 center-align">

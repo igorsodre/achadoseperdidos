@@ -13,3 +13,15 @@ function confirmar(url) {
         window.location.href = url;
     });
 }
+$(document).ready(function () {
+    $('#updaterg').mask('SS-0009999999');
+    $('#updatetelefone').mask('(00)0000-00000');
+});
+
+$(document).ready(function () {
+    $('#cadastreTelefone').mask('(00)0000-00000');
+    $('#cadastreRg').mask('SS-0009999999');
+});
+
+
+

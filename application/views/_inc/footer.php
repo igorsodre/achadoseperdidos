@@ -24,6 +24,5 @@
     $this->session->unset_userdata('subtitulo');
 } ?>
 
-
 </body>
 </html

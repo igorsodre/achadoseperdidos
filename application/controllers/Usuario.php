@@ -150,7 +150,7 @@ class Usuario extends Base_Controller
         $this->form_validation->set_rules('senha', 'senha', 'required|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
         $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
-        $this->form_validation->set_rules('telefone', 'telefone', 'numeric|max_length[18]');
+        $this->form_validation->set_rules('telefone', 'telefone', 'max_length[18]');
 
         if ($this->form_validation->run()) {
             $arr = $this->input->post();
@@ -204,7 +204,7 @@ class Usuario extends Base_Controller
         $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
         $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
-        $this->form_validation->set_rules('telefone', 'telefone', 'numeric|max_length[18]');
+        $this->form_validation->set_rules('telefone', 'telefone', 'max_length[18]');
         $arr = $this->input->post();
         if ($this->form_validation->run()) {
             $email = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'email', $arr['email'], false);
@@ -304,7 +304,7 @@ class Usuario extends Base_Controller
         $this->form_validation->set_rules('nome', 'nome', 'required|alpha|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
         $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
-        $this->form_validation->set_rules('telefone', 'telefone', 'numeric|max_length[18]');
+        $this->form_validation->set_rules('telefone', 'telefone', 'max_length[18]');
         $arr = $this->input->post();
         if ($this->form_validation->run()) {
             $email = $this->usuario_model->buscarEntidadePorPropriedade(\Entity\Perfil::getCaminho(), 'email', $arr['email'], false);
@@ -363,7 +363,7 @@ class Usuario extends Base_Controller
         $this->form_validation->set_rules('senha', 'senha', 'required|max_length[30]|min_length[4]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[60]|min_length[3]');
         $this->form_validation->set_rules('rg', 'rg', 'required|alpha_dash|max_length[20]|min_length[4]');
-        $this->form_validation->set_rules('telefone', 'telefone', 'numeric|max_length[18]');
+        $this->form_validation->set_rules('telefone', 'telefone', 'max_length[18]');
 
         if ($this->form_validation->run()) {
             $arr = $this->input->post();
