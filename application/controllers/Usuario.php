@@ -388,5 +388,6 @@ class Usuario extends Base_Controller
     {
         die(var_dump("cheguei aqui admin novo admin"));
     }
+    // uma alteracao
 
 }
