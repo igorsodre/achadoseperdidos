@@ -12,7 +12,8 @@
             </div>
             <div class="col s12">
                 <div class="input-field col s6 offset-s3">
-                    <textarea required class="materialize-textarea" id="objCreateDes" cols="20" rows="3" name="descricao"
+                    <textarea required class="materialize-textarea" id="objCreateDes" cols="20" rows="3"
+                              name="descricao"
                               form="add-obj-form"></textarea>
                     <label for="objCreateDes" class="teal-text" style="font-size: 18">Descrição</label>
                 </div>
@@ -20,7 +21,7 @@
             <div class="col s12 center-align">
                 <button id="fotoButton" type="button" class="btn waves-effect red darken-1">ADD FOTO</button>
                 <script>
-                    $('#fotoButton').on("click",function () {
+                    $('#fotoButton').on("click", function () {
                         $('#objCreateFoto').click();
                     });
                 </script>

@@ -7,11 +7,11 @@
             <form class="col s12" action="<?= base_url() . 'index.php/usuario/doLogin' ?>" method="post"
                   id="form-login">
                 <div class="input-field col s6">
-                    <input required pattern=".{4,}" id="loginField" class="validade" type="text" name="login">
+                    <input required pattern=".{4,45}" id="loginField" class="validade" type="text" name="login">
                     <label for="loginField" class="teal-text"> Usuário </label>
                 </div>
                 <div class="input-field col s6">
-                    <input required pattern=".{4,}" id="senhaField" class="validade" type="password" name="senha"><br>
+                    <input required pattern=".{4,45}" id="senhaField" class="validade" type="password" name="senha"><br>
                     <label for="senhaField" class="teal-text">Senha</label>
                 </div>
                 <div class="col s5 offset-s7">

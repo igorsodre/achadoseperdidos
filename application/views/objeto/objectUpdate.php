@@ -5,7 +5,8 @@
         </div>
     </div>
     <div class="row">
-        <form id="updt-obj-form" method="post" class="col s12" action="<?= base_url() . 'index.php/objeto/atualizacaoObjetoAction' ?>"
+        <form id="updt-obj-form" method="post" class="col s12"
+              action="<?= base_url() . 'index.php/objeto/atualizacaoObjetoAction' ?>"
               enctype="multipart/form-data">
             <div class="input-field col s6 offset-s3">
                 <input required pattern=".{2,45}" id="objUpdteId" class="validade" type="text" name="identificacao"
@@ -15,7 +16,8 @@
 
             <div class="col s12">
                 <div class="input-field col s6 offset-s3">
-                    <textarea required class="materialize-textarea" id="objUpdateDes" cols="20" rows="3" name="descricao"
+                    <textarea required class="materialize-textarea" id="objUpdateDes" cols="20" rows="3"
+                              name="descricao"
                               form="updt-obj-form"><?= $objeto->getDescricao() ?></textarea>
                     <label for="objUpdteIdDes" class="teal-text" style="font-size: 18">Descrição</label>
                 </div>
@@ -23,7 +25,7 @@
             <div class="col s12 center-align">
                 <button id="myPicButon" type="button" class="btn waves-effect red darken-1">ADD NEW PIC</button>
                 <script>
-                    $('#myPicButon').click(function(){
+                    $('#myPicButon').click(function () {
                         $('#userUpdateObj').click();
                     });
                 </script>

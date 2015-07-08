@@ -1,8 +1,10 @@
 <?php $this->load->view('_inc/header') ?>
     <div class="row">
         <div class="col s12 right-align">
-            <a href="<?=base_url().'index.php/usuario/adminNovoUsuario'?>" class="btn waves-effect blue darken-1">Novo Usuário</a>
-            <a href="<?=base_url().'index.php/usuario/adminNovoAdmin'?>" class="btn waves-effect blue darken-1">Novo Admin</a>
+            <a href="<?= base_url() . 'index.php/usuario/adminNovoUsuario' ?>" class="btn waves-effect blue darken-1">Novo
+                Usuário</a>
+            <a href="<?= base_url() . 'index.php/usuario/adminNovoAdmin' ?>" class="btn waves-effect blue darken-1">Novo
+                Admin</a>
         </div>
     </div>
     <div class="row">
@@ -29,7 +31,8 @@
                             <td><?= $user->getRg() ?></td>
                             <td><?= $user->getTelefone() ?></td>
                             <?php $url = base_url() . "index.php/Usuario/excluirUsuario/" . $user->getId(); ?>
-                            <td><a href="<?=base_url().'index.php/usuario/adminEditarUsuario/'.$user->getId()?>">Editar</a> | <a onclick="return confirmar('<?= $url ?>')">Excluir</a></td>
+                            <td><a href="<?= base_url() . 'index.php/usuario/adminEditarUsuario/' . $user->getId() ?>">Editar</a>
+                                | <a onclick="return confirmar('<?= $url ?>')">Excluir</a></td>
                         </tr>
                     <?php }
                 } ?>
@@ -61,7 +64,8 @@
                             <td><?= $admin->getRg() ?></td>
                             <td><?= $admin->getTelefone() ?></td>
                             <?php $url = base_url() . "index.php/Usuario/excluirAdmin/" . $admin->getId(); ?>
-                            <td><a href="<?=base_url().'index.php/usuario/adminEditarAdmin/'.$admin->getId()?>">Editar</a> | <a onclick="return confirmar('<?= $url ?>')">Excluir</a></td>
+                            <td><a href="<?= base_url() . 'index.php/usuario/adminEditarAdmin/' . $admin->getId() ?>">Editar</a>
+                                | <a onclick="return confirmar('<?= $url ?>')">Excluir</a></td>
                         </tr>
                     <?php }
                 } ?>

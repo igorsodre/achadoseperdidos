@@ -135,7 +135,7 @@ class Usuario extends Base_Controller
             $this->session->set_userdata('mensagem', '=)');
             $this->session->set_userdata('mensagemTipo', 'success');
             $this->session->set_userdata('subtitulo', 'Cadastro Realizado com sucesso!');
-        }else{
+        } else {
             $this->session->set_userdata('mensagem', '=(');
             $this->session->set_userdata('mensagemTipo', 'error');
             $this->session->set_userdata('subtitulo', 'Alguns campos do formulário foram preenchidos incorretamente!');
@@ -344,7 +344,6 @@ class Usuario extends Base_Controller
             $usuario = new Entity \ Perfil();
             $usuario->arrayToObjeto($user);
             $this->usuario_model->salvar($usuario);
-            $this->session->set_userdata('mensagem', '=)');
             $this->session->set_userdata('mensagemTipo', 'success');
             $this->session->set_userdata('subtitulo', 'Usuario adicionado com sucesso!');
             redirect('usuario/listarUsuarios');
