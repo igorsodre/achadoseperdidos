@@ -193,9 +193,9 @@ class Usuario extends Base_Controller
         $this->session->set_userdata('subtitulo', 'Cadastro Atualizado com sucesso!');
         switch ($this->session->userdata('loginType')) {
             case '0':
-                $this->listaUsuarios();
+                redirect('usuario/listaUsuarios');
             case'1':
-                $this->index();
+                redirect('usuario/index');
         }
     }
 
